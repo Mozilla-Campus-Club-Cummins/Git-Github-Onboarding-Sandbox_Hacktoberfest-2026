@@ -31,8 +31,8 @@ Open this repository on GitHub and click **Fork**. A fork is your personal copy 
 On your fork's GitHub page, click **Code**, copy the HTTPS URL, and run these commands in a terminal. Replace the placeholder with your GitHub username:
 
 ```text
-git clone https://github.com/<your-username>/Git-Github-Onboarding-Sandbox.git
-cd Git-Github-Onboarding-Sandbox
+git clone https://github.com/<your-username>/Git-Github-Onboarding-Sandbox_Hacktoberfest-2026.git
+cd Git-Github-Onboarding-Sandbox_Hacktoberfest-2026
 ```
 
 ### 3. Create a branch
