@@ -11,8 +11,8 @@ Screenshot placeholder: a real app screenshot will be added here later.
 2. Clone your fork, replacing `<your-username>` with your GitHub username:
 
 	```text
-	git clone https://github.com/<your-username>/Git-Github-Onboarding-Sandbox.git
-	cd Git-Github-Onboarding-Sandbox
+	git clone https://github.com/<your-username>/Git-Github-Onboarding-Sandbox_Hacktoberfest-2026.git
+	cd Git-Github-Onboarding-Sandbox_Hacktoberfest-2026
 	```
 
 3. Run the app you want to try by opening its file in your browser after cloning:
