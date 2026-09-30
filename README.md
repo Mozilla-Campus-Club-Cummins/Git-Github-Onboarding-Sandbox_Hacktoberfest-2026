@@ -31,7 +31,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contribution flow.
 
 - `todo/`, `notes/`, `expenses/` — the three mini-apps
 - `exercises/` — Git practice exercises (see the issue list)
-- `contributors/` — where each contributor adds their intro file
 
 ## Tech stack
 
