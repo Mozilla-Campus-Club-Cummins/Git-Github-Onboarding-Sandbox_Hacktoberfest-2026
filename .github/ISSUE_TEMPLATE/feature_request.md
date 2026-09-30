@@ -10,6 +10,10 @@ assignees: ""
 
 <!-- Describe the feature clearly. -->
 
+## App or area
+
+<!-- todo, notes, expenses, or docs -->
+
 ## Why would it be useful?
 
 <!-- Explain the problem this feature would solve. -->

@@ -40,7 +40,7 @@ cd Git-Github-Onboarding-Sandbox_Hacktoberfest-2026
 Create a separate branch for your work. A branch keeps your changes away from the `main` branch:
 
 ```text
-git checkout -b add-my-contributor-file
+git checkout -b my-first-change
 ```
 
 ### 4. Make a change
@@ -55,15 +55,15 @@ Ask Git which files changed:
 git status
 ```
 
-Open `todo/index.html` in a browser to test the app when your change affects the app. For a contributor file, check that the filename and text are correct.
+Open the `index.html` file of the app you changed (`todo/`, `notes/`, or `expenses/`) in your browser and check that your change works.
 
 ### 6. Commit your change
 
 Stage the file, then create a commit with a short description:
 
 ```text
-   git add <path/to/your-changed-file>
-   git commit -m "Describe your change"
+git add <path/to/your-changed-file>
+git commit -m "Describe your change"
 ```
 
 ### 7. Push your branch
@@ -71,7 +71,7 @@ Stage the file, then create a commit with a short description:
 Send your branch from your computer to your fork on GitHub:
 
 ```text
-git push -u origin add-my-contributor-file
+git push -u origin my-first-change
 ```
 
 ### 8. Open a pull request
