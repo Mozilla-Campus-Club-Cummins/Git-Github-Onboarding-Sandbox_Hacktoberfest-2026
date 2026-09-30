@@ -1,7 +1,6 @@
 # Git/GitHub Onboarding Sandbox
 
-Git/GitHub Onboarding Sandbox is a beginner-friendly to-do app built for total Git and GitHub beginners at a Hacktoberfest event. The app is intentionally simple because the real goal is practicing how to fork a repository, create a branch, make a change, commit it, push it to GitHub, and open a pull request.
-
+Git/GitHub Onboarding Sandbox is a beginner-friendly to-do app built for total Git and GitHub beginners at Hacktoberfest.
 ## Screenshot
 
 Screenshot placeholder: a real app screenshot will be added here later.
