@@ -45,7 +45,7 @@ git checkout -b add-my-contributor-file
 
 ### 4. Make a change
 
-Open the project folder in your editor. For the first practice contribution, add a file named `contributors/<your-github-username>.md`, following the example in [contributors/README.md](contributors/README.md). Save the file.
+Open the project folder in your editor. Pick an issue from the Issues tab and make the change it describes. Save your file(s).
 
 ### 5. Check your changes
 
@@ -62,8 +62,8 @@ Open `todo/index.html` in a browser to test the app when your change affects the
 Stage the file, then create a commit with a short description:
 
 ```text
-git add contributors/<your-github-username>.md
-git commit -m "Add my contributor introduction"
+   git add <path/to/your-changed-file>
+   git commit -m "Describe your change"
 ```
 
 ### 7. Push your branch
