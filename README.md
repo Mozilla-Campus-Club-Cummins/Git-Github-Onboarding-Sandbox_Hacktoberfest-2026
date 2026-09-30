@@ -3,7 +3,7 @@
 Git/GitHub Onboarding Sandbox is a beginner-friendly to-do app built for total Git and GitHub beginners at Hacktoberfest.
 ## Screenshot
 
-Screenshot placeholder: a real app screenshot will be added here later.
+<img width="739" height="608" alt="image" src="https://github.com/user-attachments/assets/985e8795-2828-420e-b08d-f77ba28367c3" />
 
 ## Quickstart
 
