@@ -87,7 +87,7 @@ git push -u origin add-my-contributor-file
 The original project is called the upstream repository. Add it as a remote once:
 
 ```text
-git remote add upstream https://github.com/shubhangisaxena953/Git-Github-Onboarding-Sandbox.git
+git remote add upstream https://github.com/Mozilla-Campus-Club-Cummins/Git-Github-Onboarding-Sandbox_Hacktoberfest-2026.git
 ```
 
 Before starting new work, update your local `main` branch:
