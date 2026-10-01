@@ -2,6 +2,7 @@ var notes = loadNotes();
 var noteForm = document.getElementById("note-form");
 var noteTitle = document.getElementById("note-title");
 var noteText = document.getElementById("note-text");
+var characterCount = document.getElementById("character-count");
 var noteList = document.getElementById("note-list");
 var emptyMessage = document.getElementById("empty-message");
 
@@ -49,6 +50,7 @@ function addNote(event) {
   notes.push({ title: title, text: text });
   saveNotes(notes);
   noteForm.reset();
+  characterCount.textContent = "Characters: 0";
   renderNotes();
   noteTitle.focus();
 }
@@ -70,7 +72,9 @@ function handleNoteListClick(event) {
 function initializeApp() {
   noteForm.addEventListener("submit", addNote);
   noteList.addEventListener("click", handleNoteListClick);
+  noteText.addEventListener("input", function () {
+    characterCount.textContent = "Characters: " + noteText.value.length;
+  });
   renderNotes();
 }
-
 initializeApp();
