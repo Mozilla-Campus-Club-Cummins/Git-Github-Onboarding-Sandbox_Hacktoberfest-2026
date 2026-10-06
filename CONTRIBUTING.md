@@ -86,7 +86,7 @@ git push -u origin my-first-change
 1. Open your fork on GitHub.
 2. Click **Compare & pull request** for the branch you just pushed.
 3. Make sure the base repository is this project and the base branch is `main`.
-4. Add a clear title and description. Link the issue you worked on if there is one.
+4. Add a clear title and description. Link the issue you worked on by including **"Closes #<issue-number>"**.
 5. Complete the checklist and click **Create pull request**.
 
 ## Sync your fork before new work
@@ -129,7 +129,6 @@ My version of the line
 The upstream version of the line
 >>>>>>> upstream/main
 ```
-
 To resolve it:
 
 1. Open the marked file.
