@@ -45,7 +45,14 @@ git checkout -b my-first-change
 
 ### 4. Make a change
 
-Open the project folder in your editor. Pick an issue from the Issues tab and make the change it describes. Save your file(s).
+Open the project folder in your editor. Pick an issue from the Issues tab (see below for proper instructions on how to get assigned an issue) and make the change it describes. Save your file(s).
+
+**How to get an issue**
+
+1. Pick an issue from the Issues tab and comment on it with your name, branch, year and college.
+2. Make sure you are registered for the event. Only registered contributors are assigned.
+3. Wait until the issue is assigned to you. Do not start work before that.
+4. Submit your PR by the deadline given in the assignment reply
 
 ### 5. Check your changes
 
