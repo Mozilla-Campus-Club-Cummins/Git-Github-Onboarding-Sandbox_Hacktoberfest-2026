@@ -66,6 +66,50 @@ function handleNoteListClick(event) {
   deleteNote(Number(event.target.dataset.index));
 }
 
+
+
+
+// Get the search input box from the HTML page
+var noteSearch = document.getElementById("note-search");
+
+// Run the search whenever the user types
+noteSearch.addEventListener("input", function () {
+
+    // Get the search text and convert it to lowercase
+    var searchText = noteSearch.value.toLowerCase();
+
+    // Keep the original index of every note while filtering
+    var filteredNotes = notes
+        .map(function (note, index) {
+            return {
+                note: note,
+                originalIndex: index
+            };
+        })
+        .filter(function (item) {
+            // Search in both title and note text
+            return item.note.title.toLowerCase().includes(searchText) ||
+                   item.note.text.toLowerCase().includes(searchText);
+        });
+
+    // Clear the notes currently displayed
+    noteList.innerHTML = "";
+
+    // Display the matching notes using their ORIGINAL index
+    filteredNotes.forEach(function (item) {
+        noteList.appendChild(
+            createNoteElement(item.note, item.originalIndex)
+        );
+    });
+
+    // Show or hide the empty message
+    emptyMessage.hidden = filteredNotes.length > 0;
+});
+
+
+
+
+
 // Connect the form, list, and saved notes on page load.
 function initializeApp() {
   noteForm.addEventListener("submit", addNote);
