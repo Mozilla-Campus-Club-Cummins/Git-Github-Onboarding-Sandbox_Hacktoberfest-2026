@@ -5,7 +5,7 @@ var amountInput = document.getElementById("expense-amount");
 var expenseList = document.getElementById("expense-list");
 var expenseTotal = document.getElementById("expense-total");
 var emptyMessage = document.getElementById("empty-message");
-
+var deleteAll=document.getElementById("delete-all");
 // Build one list item for an expense.
 function createExpenseElement(expense, index) {
   var item = document.createElement("li");
