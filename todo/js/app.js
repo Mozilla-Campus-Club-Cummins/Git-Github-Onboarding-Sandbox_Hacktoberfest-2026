@@ -3,6 +3,7 @@ var taskForm = document.getElementById("task-form");
 var taskInput = document.getElementById("task-input");
 var taskList = document.getElementById("task-list");
 var emptyMessage = document.getElementById("empty-message");
+var clearCompletedButton = document.getElementById("clear-completed");
 
 // Build one list item for a task.
 function createTaskElement(task, index) {
@@ -55,9 +56,19 @@ function deleteTask(index) {
   renderTasks();
 }
 
+// Remove all completed tasks and save the updated list.
+function clearCompletedTasks() {
+  tasks = tasks.filter(function (task) {
+    return !task.completed;
+  });
+  saveTasks(tasks);
+  renderTasks();
+}
+
 // Connect the form and render the saved tasks on page load.
 function initializeApp() {
   taskForm.addEventListener("submit", addTask);
+  clearCompletedButton.addEventListener("click", clearCompletedTasks);
   renderTasks();
 }
 
