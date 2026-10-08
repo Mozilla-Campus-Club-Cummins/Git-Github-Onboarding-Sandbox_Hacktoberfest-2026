@@ -1,6 +1,7 @@
 var tasks = loadTasks();
 var taskForm = document.getElementById("task-form");
 var taskInput = document.getElementById("task-input");
+var dueDateInput = document.getElementById("due-date");
 var taskList = document.getElementById("task-list");
 var emptyMessage = document.getElementById("empty-message");
 
@@ -11,7 +12,16 @@ function createTaskElement(task, index) {
   var deleteButton = document.createElement("button");
   item.className = "task-item";
   text.className = "task-text" + (task.completed ? " completed" : "");
-  text.textContent = task.text;
+  text.textContent = task.dueDate
+  ? task.text + " — Due: " + task.dueDate
+  : task.text;
+  if (task.dueDate) {
+  var today = new Date().toISOString().split("T")[0];
+
+  if (task.dueDate < today) {
+    text.style.color = "red";
+  }
+}
   deleteButton.className = "delete-button";
   deleteButton.textContent = "Delete";
   text.addEventListener("click", function () { toggleTask(index); });
@@ -33,11 +43,19 @@ function renderTasks() {
 function addTask(event) {
   event.preventDefault();
   var taskText = taskInput.value.trim();
-  if (!taskText) { return; }
-  tasks.push({ text: taskText, completed: false });
+var dueDate = dueDateInput.value;
+
+if (!taskText) { return; }
+
+tasks.push({
+  text: taskText,
+  completed: false,
+  dueDate: dueDate
+});
   saveTasks(tasks);
-  taskInput.value = "";
-  renderTasks();
+ taskInput.value = "";
+dueDateInput.value = "";
+renderTasks();
   taskInput.focus();
 }
 
