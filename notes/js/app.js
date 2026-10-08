@@ -55,9 +55,9 @@ function addNote(event) {
 
 // Delete one note and save the updated list.
 function deleteNote(index) {
-  notes.splice(index, 1);
-  saveNotes(notes);
-  renderNotes();
+    notes.splice(index, 1);
+    saveNotes(notes);
+    noteSearch.dispatchEvent(new Event("input"));
 }
 
 // Handle delete clicks from the note list.
