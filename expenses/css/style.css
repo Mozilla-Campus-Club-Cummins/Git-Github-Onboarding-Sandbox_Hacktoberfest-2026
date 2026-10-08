@@ -118,6 +118,13 @@ button:focus-visible {
   color: #24303a;
 }
 
+.summary-actions {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .expense-list {
   list-style: none;
   margin: 0;
