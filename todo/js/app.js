@@ -5,6 +5,9 @@ var dueDateInput = document.getElementById("due-date");
 var taskList = document.getElementById("task-list");
 var emptyMessage = document.getElementById("empty-message");
 
+// Get the element used to display the number of tasks.
+var taskCount = document.getElementById("task-count");
+
 // Build one list item for a task.
 function createTaskElement(task, index) {
   var item = document.createElement("li");
@@ -39,6 +42,12 @@ function renderTasks() {
   emptyMessage.hidden = tasks.length > 0;
 }
 
+// Update the task count displayed near the task-list heading.
+function updateTaskCount() {
+    var count = tasks.length;
+    taskCount.textContent = count + (count === 1 ? " task" : " tasks");
+}
+
 // Add a new task from the form input.
 function addTask(event) {
   event.preventDefault();
@@ -53,10 +62,11 @@ tasks.push({
   dueDate: dueDate
 });
   saveTasks(tasks);
- taskInput.value = "";
+taskInput.value = "";
 dueDateInput.value = "";
 renderTasks();
-  taskInput.focus();
+updateTaskCount();
+taskInput.focus();
 }
 
 // Toggle whether a task is complete.
@@ -71,12 +81,14 @@ function deleteTask(index) {
   tasks.splice(index, 1);
   saveTasks(tasks);
   renderTasks();
+  updateTaskCount(); // Update count after deleting a task.
 }
 
 // Connect the form and render the saved tasks on page load.
 function initializeApp() {
   taskForm.addEventListener("submit", addTask);
   renderTasks();
+  updateTaskCount(); //show the correct count for saved tasks
 }
 
 initializeApp();
