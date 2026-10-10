@@ -15,12 +15,19 @@
     </header>
 
     <form id="task-form" class="task-form">
-      <label for="task-input">New task</label>
-      <div class="input-row">
-        <input id="task-input" name="task" type="text" placeholder="Try a Git command" autocomplete="off" required>
-        <button type="submit">Add task</button>
-      </div>
-    </form>
+  <label for="task-input">New task</label>
+
+  <div class="input-row">
+    <input id="task-input" name="task" type="text" placeholder="Try a Git command" autocomplete="off" required>
+  </div>
+
+  <label for="due-date">Due date (optional)</label>
+  <div class="input-row">
+    <input id="due-date" name="dueDate" type="date">
+  </div>
+
+  <button type="submit">Add task</button>
+</form>
 
     <section aria-labelledby="task-list-heading">
       <h2 id="task-list-heading">Task list
