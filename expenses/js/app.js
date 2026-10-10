@@ -5,7 +5,7 @@ var amountInput = document.getElementById("expense-amount");
 var expenseList = document.getElementById("expense-list");
 var expenseTotal = document.getElementById("expense-total");
 var emptyMessage = document.getElementById("empty-message");
-
+var deleteAllBtn=document.getElementById("delete-all");
 // Build one list item for an expense.
 function createExpenseElement(expense, index) {
   var item = document.createElement("li");
@@ -83,10 +83,17 @@ function handleExpenseListClick(event) {
   deleteExpense(Number(event.target.dataset.index));
 }
 
+//delete all expenses and set total to 0.0
+function deleteAll(){
+  expenses = [];
+   localStorage.removeItem("expenses");
+   renderExpenses();
+}
 // Connect controls and render saved expenses on page load.
 function initializeApp() {
   expenseForm.addEventListener("submit", addExpense);
   expenseList.addEventListener("click", handleExpenseListClick);
+  deleteAllBtn.addEventListener("click",deleteAll);
   renderExpenses();
 }
 
