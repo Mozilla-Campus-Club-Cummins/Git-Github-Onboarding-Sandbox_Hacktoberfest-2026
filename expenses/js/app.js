@@ -5,6 +5,7 @@ var amountInput = document.getElementById("expense-amount");
 var expenseList = document.getElementById("expense-list");
 var expenseTotal = document.getElementById("expense-total");
 var emptyMessage = document.getElementById("empty-message");
+var categoryInput = document.getElementById("expense-category");
 
 // Build one list item for an expense.
 function createExpenseElement(expense, index) {
@@ -18,11 +19,20 @@ function createExpenseElement(expense, index) {
 function createExpenseDetails(expense) {
   var details = document.createElement("span");
   var amount = document.createElement("strong");
+  var category = document.createElement("span");
+
   details.className = "expense-description";
   amount.className = "expense-amount";
+  category.className = "expense-category";
+
   details.textContent = expense.description + " ";
   amount.textContent = formatAmount(expense.amount);
+
+  category.textContent = expense.category || "Other"; /*Imp line*/
+
   details.appendChild(amount);
+  details.appendChild(category);
+
   return details;
 }
 
@@ -62,8 +72,9 @@ function addExpense(event) {
   event.preventDefault();
   var description = descriptionInput.value.trim();
   var amount = Number(amountInput.value);
+  var category = categoryInput.value;
   if (!description || amount <= 0) { return; }
-  expenses.push({ description: description, amount: amount });
+  expenses.push({ description: description, amount: amount, category: category });
   saveExpenses(expenses);
   expenseForm.reset();
   renderExpenses();
