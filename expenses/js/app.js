@@ -4,8 +4,11 @@ var descriptionInput = document.getElementById("expense-description");
 var amountInput = document.getElementById("expense-amount");
 var expenseList = document.getElementById("expense-list");
 var expenseTotal = document.getElementById("expense-total");
+var expenseCount = document.getElementById("expense-count");
 var emptyMessage = document.getElementById("empty-message");
+var categoryInput = document.getElementById("expense-category");
 
+var deleteAllBtn = document.getElementById("delete-all");
 // Build one list item for an expense.
 function createExpenseElement(expense, index) {
   var item = document.createElement("li");
@@ -18,11 +21,20 @@ function createExpenseElement(expense, index) {
 function createExpenseDetails(expense) {
   var details = document.createElement("span");
   var amount = document.createElement("strong");
+  var category = document.createElement("span");
+
   details.className = "expense-description";
   amount.className = "expense-amount";
+  category.className = "expense-category";
+
   details.textContent = expense.description + " ";
   amount.textContent = formatAmount(expense.amount);
+
+  category.textContent = expense.category || "Other"; /*Imp line*/
+
   details.appendChild(amount);
+  details.appendChild(category);
+
   return details;
 }
 
@@ -47,14 +59,18 @@ function calculateTotal() {
   }, 0);
 }
 
-// Draw expenses, total, and the empty state.
+// Draw expenses, total, count and the empty state.
 function renderExpenses() {
   expenseList.innerHTML = "";
   expenses.forEach(function (expense, index) {
     expenseList.appendChild(createExpenseElement(expense, index));
   });
   expenseTotal.textContent = formatAmount(calculateTotal());
+  var count = expenses.length;
+  expenseCount.textContent =
+    count + (count === 1 ? " expense" : " expenses");
   emptyMessage.hidden = expenses.length > 0;
+  deleteAllBtn.hidden = expenses.length === 0;
 }
 
 // Add a new expense from the form inputs.
@@ -62,8 +78,9 @@ function addExpense(event) {
   event.preventDefault();
   var description = descriptionInput.value.trim();
   var amount = Number(amountInput.value);
+  var category = categoryInput.value;
   if (!description || amount <= 0) { return; }
-  expenses.push({ description: description, amount: amount });
+  expenses.push({ description: description, amount: amount, category: category });
   saveExpenses(expenses);
   expenseForm.reset();
   renderExpenses();
@@ -83,10 +100,17 @@ function handleExpenseListClick(event) {
   deleteExpense(Number(event.target.dataset.index));
 }
 
+//delete all expenses and set total to 0.0
+function deleteAll() {
+  expenses = [];
+  localStorage.removeItem("expenses");
+  renderExpenses();
+}
 // Connect controls and render saved expenses on page load.
 function initializeApp() {
   expenseForm.addEventListener("submit", addExpense);
   expenseList.addEventListener("click", handleExpenseListClick);
+  deleteAllBtn.addEventListener("click", deleteAll);
   renderExpenses();
 }
 

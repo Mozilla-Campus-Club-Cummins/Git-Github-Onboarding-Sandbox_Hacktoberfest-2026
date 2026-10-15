@@ -23,9 +23,18 @@
       <button type="submit">Add note</button>
     </form>
 
-    <section aria-labelledby="note-list-heading">
-      <h2 id="note-list-heading">All notes</h2>
-      <ul id="note-list" class="note-list"></ul>
+<section aria-labelledby="note-list-heading">
+    <h2 id="note-list-heading">All notes</h2>
+    
+<!-- search box for finding notes-->
+    <input
+        id="note-search"
+        type="search"
+        placeholder="Search notes..."
+        aria-label="Search notes"
+    >
+
+    <ul id="note-list" class="note-list"></ul>
       <p id="empty-message" class="empty-message">No notes yet. Add one to get started.</p>
     </section>
   </main>
